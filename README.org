@@ -1,0 +1,19 @@
+#+title: Mindbox Todo App
+
+** Тестовое задание для компании Mindbox на позицию middle разработчика (TS, React)
+
+*** Description:
+| Фичи                                 | Время |
+|--------------------------------------+-------|
+| useContext (all logic)               | ~10m  |
+| isomorphic components (all refactor) | ~20m  |
+| alias for imports                    | ~1m   |
+
+
+
+*** Guide how to start:
+#+begin_src shell
+git clone https://github.com/gudkovWay/mindbox
+cd mindbox
+npm i && npm run dev
+#+end_src
