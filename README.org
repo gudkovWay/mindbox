@@ -8,6 +8,7 @@
 | useContext (all logic)               | ~10m  |
 | isomorphic components (all refactor) | ~20m  |
 | alias for imports                    | ~1m   |
+| верстка/etc                          | ~30m  |
 
 
 
