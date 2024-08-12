@@ -1,10 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-createRoot(document.getElementById('root')!).render(
+import App from "./core/App";
+import "./core/styles/globals.css";
+import { TodoProvider } from "./core/providers/tasks/Provider";
+
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <TodoProvider>
+      <App />
+    </TodoProvider>
   </StrictMode>,
-)
+);

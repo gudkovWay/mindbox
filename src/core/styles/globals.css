@@ -1,0 +1,12 @@
+@import "./variables.css";
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 1160px;
+  text-align: center;
+  margin: 0 auto;
+}

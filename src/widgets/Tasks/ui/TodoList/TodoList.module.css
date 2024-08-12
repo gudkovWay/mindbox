@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 2px;
+
+  button {
+    background: none;
+    border: 0;
+    padding: 4px 8px;
+    color: #fafafa;
+    font-size: 30px;
+  }
+  form {
+    width: 100%;
+  }
+  input {
+    width: 100%;
+    padding: 4px 0px;
+    border: none;
+    border-radius: 4px;
+    caret-color: gold;
+  }
+}
+
+.item {
+  color: #fafafa;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease-in;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
