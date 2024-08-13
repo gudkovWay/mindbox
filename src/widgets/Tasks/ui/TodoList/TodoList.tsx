@@ -56,7 +56,7 @@ export const TodoList: React.FC<TodoListProps> = (props) => {
           ))}
         </ul>
       ) : (
-        <div className={cls.empty}>Nothing to do</div>
+        expand && <div className={cls.empty}>Nothing to do</div>
       )}
     </>
   );
