@@ -24,15 +24,37 @@
 }
 
 .item {
-  color: #fafafa;
-  font-size: 20px;
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 4px;
+  color: #fafafa;
+  font-size: 20px;
   transition: all 0.2s ease-in;
+}
+
+.item > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item > button {
+  font-size: 16px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in;
+}
+
+.item > button:hover {
+  opacity: 1;
 }
 
 .completed {
   text-decoration: line-through;
   opacity: 0.5;
+}
+
+.completed > button {
+  opacity: 1;
 }

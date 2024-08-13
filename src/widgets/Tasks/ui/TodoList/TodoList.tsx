@@ -6,11 +6,12 @@ import cls from "./TodoList.module.css";
 interface TodoListProps {
   items: TaskProps[];
   addItem: (value: string) => void;
-  taskToggle: (id: string) => void;
+  deleteItem: (id: string) => void;
+  toggleTask: (id: string) => void;
 }
 
 export const TodoList: React.FC<TodoListProps> = (props) => {
-  const { items, addItem, taskToggle } = { ...props };
+  const { items, addItem, deleteItem, toggleTask } = { ...props };
   const [value, setValue] = useState("");
   const [expand, setExpanded] = useState(false);
 
@@ -34,22 +35,28 @@ export const TodoList: React.FC<TodoListProps> = (props) => {
         </form>
       </div>
 
-      {expand && (
+      {expand && items.length > 0 ? (
         <ul>
           {items.map((item) => (
             <li
               key={item.id}
               className={`${cls.item} ${item.completed && cls.completed}`}
             >
-              <input
-                type="checkbox"
-                checked={item.completed}
-                onChange={() => taskToggle(item.id)}
-              />
-              {item.name}
+              <div>
+                <input
+                  type="checkbox"
+                  checked={item.completed}
+                  onChange={() => toggleTask(item.id)}
+                />
+                {item.name}
+              </div>
+
+              <button onClick={() => deleteItem(item.id)}>x</button>
             </li>
           ))}
         </ul>
+      ) : (
+        <div className={cls.empty}>Nothing to do</div>
       )}
     </>
   );

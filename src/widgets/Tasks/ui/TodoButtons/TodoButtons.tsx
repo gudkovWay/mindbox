@@ -7,10 +7,12 @@ interface TodoButtonsProps {
   allFilter: () => void;
   activeFilter: () => void;
   completedFilter: () => void;
+  clearCompleted: () => void;
 }
 
 export const TodoButtons: React.FC<TodoButtonsProps> = (props) => {
-  const { allFilter, activeFilter, completedFilter, items } = props;
+  const { allFilter, activeFilter, completedFilter, clearCompleted, items } =
+    props;
 
   return (
     <div className={cls.buttons}>
@@ -27,7 +29,7 @@ export const TodoButtons: React.FC<TodoButtonsProps> = (props) => {
         <button onClick={completedFilter}>Completed</button>
       </div>
 
-      <button className={cls.clear}>
+      <button className={cls.clear} onClick={clearCompleted}>
         <BasketIcon />
       </button>
     </div>

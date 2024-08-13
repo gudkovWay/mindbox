@@ -1,4 +1,4 @@
-import Todo from "@/widgets/Tasks";
+import { Todo } from "@/widgets/Tasks";
 
 const App = () => {
   return (

@@ -18,8 +18,12 @@ export const TodoProvider: React.FC<{ children: React.ReactNode }> = ({
     const newItem = { id: Date.now().toString(), name, completed: false };
     setItems((prev) => [...prev, newItem]);
   };
+  const deleteItem = (id: string) => {
+    const newItems = items.filter((item) => item.id !== id);
+    setItems(newItems);
+  };
 
-  const taskToggle = (id: string) => {
+  const toggleTask = (id: string) => {
     const newItems = items.map((item) => {
       if (item.id === id) {
         return { ...item, completed: !item.completed };
@@ -35,7 +39,7 @@ export const TodoProvider: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <TodoContext.Provider
-      value={{ items, addItem, taskToggle, clearCompleted }}
+      value={{ items, addItem, toggleTask, clearCompleted, deleteItem }}
     >
       {children}
     </TodoContext.Provider>
